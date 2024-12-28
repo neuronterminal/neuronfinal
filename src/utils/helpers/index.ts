@@ -21,3 +21,7 @@ export const formatDate = (date: Date): string => {
 export const generateId = (): string => {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
 };
+
+export const getCurrentTime = (): string => {
+  return new Date().toLocaleTimeString();
+};
