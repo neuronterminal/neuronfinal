@@ -37,7 +37,9 @@ export function MatrixBackground() {
 
       drops.forEach((drop, i) => {
         const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drop * fontSize);
+        if (ctx) {
+          ctx.fillText(text, i * fontSize, drop * fontSize);
+        }
 
         if (drop * fontSize > canvas.height && Math.random() > 0.975) {
           drops[i] = 0;
