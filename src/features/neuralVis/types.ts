@@ -6,12 +6,14 @@ export interface NeuralNode extends SimulationNodeDatum {
   type: 'input' | 'hidden' | 'output';
   activation: number;
   bias: number;
+  x?: number;
+  y?: number;
 }
 
 export interface NeuralLink extends SimulationLinkDatum<NeuralNode> {
   weight: number;
-  source: string;
-  target: string;
+  source: string | NeuralNode;
+  target: string | NeuralNode;
 }
 
 export interface NetworkData {
